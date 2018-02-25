@@ -19,6 +19,10 @@
 		DED924D920435FF60062AC35 /* RecycleMaterials.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED924D820435FF60062AC35 /* RecycleMaterials.swift */; };
 		DED924DB204360BD0062AC35 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED924DA204360BD0062AC35 /* BaseViewController.swift */; };
 		DED924DD204360DF0062AC35 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED924DC204360DF0062AC35 /* BaseNavigationController.swift */; };
+		DED924E02043627F0062AC35 /* RecyclePointMapNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED924DF2043627F0062AC35 /* RecyclePointMapNavigationController.swift */; };
+		DED924E2204362920062AC35 /* RecyclePointListNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED924E1204362920062AC35 /* RecyclePointListNavigationController.swift */; };
+		DED924E4204366090062AC35 /* RecyclePointMapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED924E3204366090062AC35 /* RecyclePointMapViewController.storyboard */; };
+		DED924E6204366940062AC35 /* RecyclePointListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED924E5204366940062AC35 /* RecyclePointListViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		DED924D820435FF60062AC35 /* RecycleMaterials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleMaterials.swift; sourceTree = "<group>"; };
 		DED924DA204360BD0062AC35 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DED924DC204360DF0062AC35 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		DED924DF2043627F0062AC35 /* RecyclePointMapNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecyclePointMapNavigationController.swift; sourceTree = "<group>"; };
+		DED924E1204362920062AC35 /* RecyclePointListNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecyclePointListNavigationController.swift; sourceTree = "<group>"; };
+		DED924E3204366090062AC35 /* RecyclePointMapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecyclePointMapViewController.storyboard; sourceTree = "<group>"; };
+		DED924E5204366940062AC35 /* RecyclePointListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecyclePointListViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,15 +152,14 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DED924D020435E060062AC35 /* View Controllers */ = {
+		DED924D020435E060062AC35 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				DED924DA204360BD0062AC35 /* BaseViewController.swift */,
-				DED924DC204360DF0062AC35 /* BaseNavigationController.swift */,
-				DED924A12042A7630062AC35 /* RecyclePointMapViewController.swift */,
+				DED924E1204362920062AC35 /* RecyclePointListNavigationController.swift */,
 				DED924A32042A7630062AC35 /* RecyclePointListViewController.swift */,
+				DED924E5204366940062AC35 /* RecyclePointListViewController.storyboard */,
 			);
-			path = "View Controllers";
+			path = List;
 			sourceTree = "<group>";
 		};
 		DED924D120435E9F0062AC35 /* Networking */ = {
@@ -183,7 +190,10 @@
 			children = (
 				DED924AA2042A7630062AC35 /* LaunchScreen.storyboard */,
 				DED924A52042A7630062AC35 /* Main.storyboard */,
-				DED924D020435E060062AC35 /* View Controllers */,
+				DED924DA204360BD0062AC35 /* BaseViewController.swift */,
+				DED924DC204360DF0062AC35 /* BaseNavigationController.swift */,
+				DED924DE2043625C0062AC35 /* Map */,
+				DED924D020435E060062AC35 /* List */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -194,6 +204,16 @@
 				DED924A82042A7630062AC35 /* Assets.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		DED924DE2043625C0062AC35 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				DED924DF2043627F0062AC35 /* RecyclePointMapNavigationController.swift */,
+				DED924A12042A7630062AC35 /* RecyclePointMapViewController.swift */,
+				DED924E3204366090062AC35 /* RecyclePointMapViewController.storyboard */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,8 +324,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DED924AC2042A7630062AC35 /* LaunchScreen.storyboard in Resources */,
+				DED924E4204366090062AC35 /* RecyclePointMapViewController.storyboard in Resources */,
 				DED924A92042A7630062AC35 /* Assets.xcassets in Resources */,
 				DED924A72042A7630062AC35 /* Main.storyboard in Resources */,
+				DED924E6204366940062AC35 /* RecyclePointListViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +359,8 @@
 				DED924A22042A7630062AC35 /* RecyclePointMapViewController.swift in Sources */,
 				DED924D920435FF60062AC35 /* RecycleMaterials.swift in Sources */,
 				DED924DB204360BD0062AC35 /* BaseViewController.swift in Sources */,
+				DED924E2204362920062AC35 /* RecyclePointListNavigationController.swift in Sources */,
+				DED924E02043627F0062AC35 /* RecyclePointMapNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
