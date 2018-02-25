@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  RecyclePointMapViewController.swift
 //  Recycle Now
 //
 //  Created by Carl on 25/02/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class RecyclePointMapViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

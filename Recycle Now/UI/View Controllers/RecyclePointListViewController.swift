@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  RecyclePointListViewController.swift
 //  Recycle Now
 //
 //  Created by Carl on 25/02/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class RecyclePointListViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
