@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecyclePointListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class RecyclePointListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate {
     
     // ===============================================
     // MARK: - Properties
@@ -22,6 +22,8 @@ class RecyclePointListViewController: BaseViewController, UITableViewDelegate, U
         }
     }
     
+    var searchDataTask: URLSessionDataTask?
+    
     
     
     // ===============================================
@@ -31,9 +33,9 @@ class RecyclePointListViewController: BaseViewController, UITableViewDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setUpTableView()
+        self.setUpSearchBar()
         
-        self.fetchRecyclePoints()
+        self.setUpTableView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,16 +61,29 @@ class RecyclePointListViewController: BaseViewController, UITableViewDelegate, U
         self.tableView.refreshControl = refreshControl
     }
     
+    fileprivate func setUpSearchBar() {
+        let searchViewController = RecyclePointSearchViewController.loadFromStoryboard()
+        let searchController = UISearchController.init(searchResultsController: nil)
+        searchController.delegate = self
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        self.navigationItem.searchController = searchController
+        self.navigationItem.hidesSearchBarWhenScrolling = false
+    }
+    
     
     
     // ===============================================
     // MARK: - Private
     // ===============================================
     
-    fileprivate func fetchRecyclePoints() {
-        // TODO: make location not hardcoded!
-        let config = URLSessionDataTaskConfig.RecycleLocation.init(location: "EH35BW")
-        NetworkClient.shared.dataTaskWith(config: config, decodableType: RecycleItems.self, successBlock: { (response) in
+    fileprivate func fetchRecyclePoints(forLocation location: String?) {
+        guard let location = location, location.count > 0 else { return }
+        
+        self.searchDataTask?.cancel()
+        
+        let config = URLSessionDataTaskConfig.RecycleLocation.init(location: location)
+        self.searchDataTask = NetworkClient.shared.dataTaskWith(config: config, decodableType: RecycleItems.self, successBlock: { (response) in
             
             self.tableView.refreshControl?.endRefreshing()
             
@@ -82,7 +97,7 @@ class RecyclePointListViewController: BaseViewController, UITableViewDelegate, U
     }
     
     @objc private func pullToRefresh() {
-        self.fetchRecyclePoints()
+        self.fetchRecyclePoints(forLocation: "")
     }
     
     private func reloadTable() {
@@ -124,5 +139,36 @@ class RecyclePointListViewController: BaseViewController, UITableViewDelegate, U
         if let cell = cell as? RecyclePointCell {
             cell.render()
         }
+    }
+    
+    
+    
+    // ===============================================
+    // MARK: - UISearchResultsUpdating
+    // ===============================================
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        print()
+    }
+    
+    
+    
+    // ===============================================
+    // MARK: - UISearchBarDelegate
+    // ===============================================
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard let searchBarText = searchBar.text else { return }
+        guard searchBarText.count >= 3 else { return }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            self.fetchRecyclePoints(forLocation: searchBarText)
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.fetchRecyclePoints(forLocation: searchBar.text)
+        self.navigationItem.searchController?.dismiss(animated: true, completion: {
+            // TODO: show loading view
+        })
     }
 }

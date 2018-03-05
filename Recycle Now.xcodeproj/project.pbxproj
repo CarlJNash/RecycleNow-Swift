@@ -10,6 +10,8 @@
 		DE50CDDB2049F21E00CC70BC /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50CDDA2049F21E00CC70BC /* NetworkConfig.swift */; };
 		DE50CDDE204A0BAE00CC70BC /* RecyclePointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50CDDD204A0BAE00CC70BC /* RecyclePointCell.swift */; };
 		DE50CDE0204A0BF200CC70BC /* RecyclePointCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE50CDDF204A0BF200CC70BC /* RecyclePointCell.xib */; };
+		DE50CDE3204B635F00CC70BC /* RecyclePointSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50CDE2204B635F00CC70BC /* RecyclePointSearchViewController.swift */; };
+		DE50CDE5204B637000CC70BC /* RecyclePointSearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE50CDE4204B637000CC70BC /* RecyclePointSearchViewController.storyboard */; };
 		DEAA466A20446DFE00BD059E /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAA466920446DFE00BD059E /* NetworkClient.swift */; };
 		DED924A02042A7630062AC35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED9249F2042A7630062AC35 /* AppDelegate.swift */; };
 		DED924A22042A7630062AC35 /* RecyclePointMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED924A12042A7630062AC35 /* RecyclePointMapViewController.swift */; };
@@ -49,6 +51,8 @@
 		DE50CDDA2049F21E00CC70BC /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		DE50CDDD204A0BAE00CC70BC /* RecyclePointCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecyclePointCell.swift; sourceTree = "<group>"; };
 		DE50CDDF204A0BF200CC70BC /* RecyclePointCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecyclePointCell.xib; sourceTree = "<group>"; };
+		DE50CDE2204B635F00CC70BC /* RecyclePointSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecyclePointSearchViewController.swift; sourceTree = "<group>"; };
+		DE50CDE4204B637000CC70BC /* RecyclePointSearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecyclePointSearchViewController.storyboard; sourceTree = "<group>"; };
 		DEAA466920446DFE00BD059E /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		DED9249C2042A7630062AC35 /* Recycle Now.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recycle Now.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED9249F2042A7630062AC35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +109,15 @@
 				DE50CDDF204A0BF200CC70BC /* RecyclePointCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		DE50CDE1204B633F00CC70BC /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				DE50CDE2204B635F00CC70BC /* RecyclePointSearchViewController.swift */,
+				DE50CDE4204B637000CC70BC /* RecyclePointSearchViewController.storyboard */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		DED924932042A7630062AC35 = {
@@ -205,6 +218,7 @@
 		DED924D420435F1F0062AC35 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				DE50CDE1204B633F00CC70BC /* Search */,
 				DED924AA2042A7630062AC35 /* LaunchScreen.storyboard */,
 				DED924A52042A7630062AC35 /* Main.storyboard */,
 				DED924DA204360BD0062AC35 /* BaseViewController.swift */,
@@ -341,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DED924AC2042A7630062AC35 /* LaunchScreen.storyboard in Resources */,
+				DE50CDE5204B637000CC70BC /* RecyclePointSearchViewController.storyboard in Resources */,
 				DED924E4204366090062AC35 /* RecyclePointMapViewController.storyboard in Resources */,
 				DED924A92042A7630062AC35 /* Assets.xcassets in Resources */,
 				DED924A72042A7630062AC35 /* Main.storyboard in Resources */,
@@ -381,6 +396,7 @@
 				DED924DB204360BD0062AC35 /* BaseViewController.swift in Sources */,
 				DED924E2204362920062AC35 /* RecyclePointListNavigationController.swift in Sources */,
 				DED924E02043627F0062AC35 /* RecyclePointMapNavigationController.swift in Sources */,
+				DE50CDE3204B635F00CC70BC /* RecyclePointSearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
